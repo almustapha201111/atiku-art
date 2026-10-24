@@ -8,13 +8,9 @@ import {
   Send, 
   CheckCircle2, 
   Clock, 
-  Sparkles,
-  Download,
-  FileArchive,
-  Loader2
+  Sparkles 
 } from 'lucide-react';
 import { useStudio } from '../context/StudioContext';
-import { downloadProjectZip } from '../lib/projectZipDownloader';
 
 export const Contact: React.FC = () => {
   const { settings, services, submitInquiry, getWhatsAppUrl } = useStudio();
@@ -29,29 +25,6 @@ export const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  // ZIP Download State (with one-time action & auto-hide upon success)
-  const [isDownloadingZip, setIsDownloadingZip] = useState(false);
-  const [zipProgress, setZipProgress] = useState<string | null>(null);
-  const [hasDownloadedZip, setHasDownloadedZip] = useState(false);
-
-  const handleDownloadZip = async () => {
-    // Prevent accidental double-clicks or repeated executions
-    if (isDownloadingZip || hasDownloadedZip) return;
-
-    try {
-      setIsDownloadingZip(true);
-      await downloadProjectZip((status) => setZipProgress(status));
-      // Hide immediately once download completes successfully
-      setHasDownloadedZip(true);
-    } catch (err) {
-      console.error('Failed to download project zip:', err);
-      alert('Could not generate the project ZIP file. Please try again.');
-    } finally {
-      setIsDownloadingZip(false);
-      setZipProgress(null);
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,13 +77,13 @@ export const Contact: React.FC = () => {
             Connect With <span className="artistic-gradient-text italic font-bold">ATIKU ART.</span>
           </h2>
           <p className="mt-5 text-sm sm:text-base text-[#555555] font-normal leading-relaxed">
-            Ready to commission a vibrant wall masterpiece? Send us your space details, download the complete project files, or chat directly on WhatsApp.
+            Ready to commission a vibrant wall masterpiece? Send us your space details or chat directly with our team on WhatsApp.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
-          {/* Left Column: Business Info, Direct Contacts & Download Project ZIP Card */}
+          {/* Left Column: Business Info & Direct Contacts */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               
@@ -138,54 +111,6 @@ export const Contact: React.FC = () => {
                     <span>Chat on WhatsApp Directly</span>
                   </a>
                 </div>
-              </div>
-
-              {/* DEDICATED "DOWNLOAD PROJECT ZIP" CARD */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-[#FAF7F2] via-white to-[#FAF7F2] border-2 border-[#2A9D8F] shadow-md space-y-4">
-                <div className="flex items-center space-x-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-[#2A9D8F] text-white flex items-center justify-center shrink-0 shadow-sm">
-                    <FileArchive className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase tracking-wider text-[#E76F51] font-bold block">
-                      Source Package & Assets
-                    </span>
-                    <h4 className="font-serif text-lg font-bold text-[#252525]">
-                      Download Project ZIP
-                    </h4>
-                  </div>
-                </div>
-
-                <p className="text-xs text-[#555555] leading-relaxed">
-                  Download the complete ATIKU ART website codebase, high-resolution interior artwork assets, documentation, and configuration files bundled as a ZIP file.
-                </p>
-
-                {/* Button disappears immediately upon successful download */}
-                {!hasDownloadedZip ? (
-                  <button
-                    type="button"
-                    onClick={handleDownloadZip}
-                    disabled={isDownloadingZip}
-                    className="w-full inline-flex items-center justify-center space-x-2.5 py-4 rounded-lg bg-[#2A9D8F] hover:bg-[#1E7B70] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-[#2A9D8F]/25 hover:shadow-lg active:scale-95 disabled:opacity-75 cursor-pointer"
-                  >
-                    {isDownloadingZip ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>{zipProgress || 'Packaging Project ZIP...'}</span>
-                      </>
-                    ) : (
-                      <>
-                        <Download className="w-4 h-4" />
-                        <span>Download Project ZIP File</span>
-                      </>
-                    )}
-                  </button>
-                ) : (
-                  <div className="flex items-center space-x-2.5 text-xs text-[#2A9D8F] font-semibold bg-[#2A9D8F]/10 px-4 py-3 rounded-lg border border-[#2A9D8F]/20">
-                    <CheckCircle2 className="w-4 h-4 text-[#2A9D8F] shrink-0" />
-                    <span>Project ZIP archive downloaded successfully.</span>
-                  </div>
-                )}
               </div>
 
               {/* Contact Channels List */}
@@ -267,7 +192,7 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Contact Inquiry Form & Project ZIP Download Option */}
+          {/* Right Column: Contact Inquiry Form */}
           <div className="lg:col-span-7">
             <div className="p-8 sm:p-10 rounded-2xl bg-[#FAF7F2] border border-[#EADBCE] shadow-sm relative">
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#E76F51] font-bold">
@@ -289,38 +214,17 @@ export const Contact: React.FC = () => {
                     Thank you, {formData.fullName}. Your project inquiry has been securely submitted to ATIKU ART.
                   </p>
                   
-                  {/* Actions: WhatsApp Forward + Download Project ZIP */}
-                  <div className="pt-4 mt-4 border-t border-[#EADBCE] flex flex-col sm:flex-row items-center justify-center gap-3">
+                  {/* Actions: Forward to WhatsApp */}
+                  <div className="pt-4 mt-4 border-t border-[#EADBCE] flex items-center justify-center">
                     <a
                       href={buildWhatsAppInquiryUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-6 py-3 rounded bg-[#E76F51] hover:bg-[#C85438] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#E76F51]/30 transition-all"
+                      className="inline-flex items-center space-x-2 px-6 py-3.5 rounded bg-[#E76F51] hover:bg-[#C85438] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#E76F51]/30 transition-all"
                     >
                       <MessageSquare className="w-4 h-4" />
                       <span>Forward Brief to WhatsApp</span>
                     </a>
-
-                    {!hasDownloadedZip && (
-                      <button
-                        type="button"
-                        onClick={handleDownloadZip}
-                        disabled={isDownloadingZip}
-                        className="inline-flex items-center space-x-2 px-6 py-3 rounded border border-[#2A9D8F] bg-[#2A9D8F] hover:bg-[#1E7B70] text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all cursor-pointer disabled:opacity-75"
-                      >
-                        {isDownloadingZip ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            <span>Preparing ZIP...</span>
-                          </>
-                        ) : (
-                          <>
-                            <Download className="w-4 h-4" />
-                            <span>Download Project ZIP</span>
-                          </>
-                        )}
-                      </button>
-                    )}
                   </div>
 
                   <button
@@ -426,7 +330,7 @@ export const Contact: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Action Buttons: Submit, WhatsApp & One-time Download Project ZIP */}
+                  {/* Action Buttons: Submit & WhatsApp */}
                   <div className="pt-2 flex flex-col sm:flex-row gap-3">
                     <button
                       type="submit"
@@ -441,34 +345,11 @@ export const Contact: React.FC = () => {
                       href={buildWhatsAppInquiryUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-2 px-5 py-4 rounded-sm border-2 border-[#252525] text-[#252525] hover:bg-[#252525] hover:text-white font-bold uppercase tracking-wider text-xs transition-all whitespace-nowrap active:scale-95"
+                      className="inline-flex items-center justify-center space-x-2 px-6 py-4 rounded-sm border-2 border-[#252525] text-[#252525] hover:bg-[#252525] hover:text-white font-bold uppercase tracking-wider text-xs transition-all whitespace-nowrap active:scale-95"
                     >
                       <MessageSquare className="w-4 h-4" />
-                      <span>WhatsApp</span>
+                      <span>WhatsApp Direct</span>
                     </a>
-
-                    {/* Disappears immediately after successful download */}
-                    {!hasDownloadedZip && (
-                      <button
-                        type="button"
-                        onClick={handleDownloadZip}
-                        disabled={isDownloadingZip}
-                        className="inline-flex items-center justify-center space-x-2 px-5 py-4 rounded-sm border-2 border-[#2A9D8F] bg-white text-[#2A9D8F] hover:bg-[#2A9D8F] hover:text-white font-bold uppercase tracking-wider text-xs transition-all whitespace-nowrap active:scale-95 shadow-xs disabled:opacity-75 cursor-pointer"
-                        title="Download complete project files as a ZIP archive"
-                      >
-                        {isDownloadingZip ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            <span>Packaging ZIP...</span>
-                          </>
-                        ) : (
-                          <>
-                            <Download className="w-4 h-4" />
-                            <span>Download Project ZIP</span>
-                          </>
-                        )}
-                      </button>
-                    )}
                   </div>
                 </form>
               )}
