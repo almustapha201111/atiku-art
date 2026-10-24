@@ -1,0 +1,8 @@
+{
+  "name": "ATIKU ART — Creative Wall Art & Interior Design Studio",
+  "description": "Luxury wall painting, artistic interior wall decoration, murals, and bespoke custom artwork studio in Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

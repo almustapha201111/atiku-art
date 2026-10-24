@@ -1,0 +1,224 @@
+{
+  "entities": {
+    "BusinessSettings": {
+      "title": "BusinessSettings",
+      "description": "Configurable business information, contact details and social media links for ATIKU ART.",
+      "type": "object",
+      "properties": {
+        "businessName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "tagline": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "whatsappNumber": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "phoneNumber": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "instagram": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "tiktok": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "aboutText": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "heroTitle": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "heroSubtitle": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "heroImageUrl": {
+          "type": "string",
+          "maxLength": 500000
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["businessName", "whatsappNumber"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "Creative wall art and interior decoration services provided by ATIKU ART.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "imageUrl": {
+          "type": "string",
+          "maxLength": 500000
+        },
+        "order": {
+          "type": "number"
+        },
+        "isConfirmed": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["title", "description", "isConfirmed"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Portfolio artwork and wall painting project photograph uploads for ATIKU ART.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Wall Murals", "Interior Art", "Decorative Painting", "Creative Concepts", "Wall Art", "Murals", "Interior Decoration", "Custom Artwork"]
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "imageUrl": {
+          "type": "string",
+          "maxLength": 500000
+        },
+        "beforeImageUrl": {
+          "type": "string",
+          "maxLength": 500000
+        },
+        "afterImageUrl": {
+          "type": "string",
+          "maxLength": 500000
+        },
+        "hasBeforeAfter": {
+          "type": "boolean"
+        },
+        "isPublished": {
+          "type": "boolean"
+        },
+        "isHeroFeatured": {
+          "type": "boolean"
+        },
+        "order": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["title", "category", "isPublished"]
+    },
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "Client project inquiry submitted via the website contact form.",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "phoneNumber": {
+          "type": "string",
+          "maxLength": 30
+        },
+        "serviceRequired": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "projectDescription": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "status": {
+          "type": "string",
+          "enum": ["new", "contacted", "completed"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["fullName", "phoneNumber", "serviceRequired", "projectDescription"]
+    },
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Registered administrator document for role verification.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "role": {
+          "type": "string",
+          "enum": ["admin", "owner"]
+        },
+        "addedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/settings/{settingId}": {
+      "schema": "BusinessSettings",
+      "description": "Global business configuration, contact numbers, and social links"
+    },
+    "/services/{serviceId}": {
+      "schema": "Service",
+      "description": "List of studio wall art and design services"
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Portfolio projects and artwork photographs"
+    },
+    "/inquiries/{inquiryId}": {
+      "schema": "Inquiry",
+      "description": "Client service quote requests and contact messages"
+    },
+    "/admins/{adminId}": {
+      "schema": "AdminUser",
+      "description": "Admin authorization mapping for ATIKU ART managers"
+    }
+  }
+}

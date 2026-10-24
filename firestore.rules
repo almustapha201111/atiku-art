@@ -1,0 +1,106 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all unknown access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isBootstrapAdmin() {
+      return isVerified() && (request.auth.token.email == 'almustaphaaus2011@gmail.com');
+    }
+
+    function isAdmin() {
+      return isBootstrapAdmin() || (isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)));
+    }
+
+    // Validation functions
+    function isValidBusinessSettings(data) {
+      return data.keys().hasAll(['businessName', 'whatsappNumber']) &&
+        data.businessName is string && data.businessName.size() <= 100 &&
+        data.whatsappNumber is string && data.whatsappNumber.size() <= 30;
+    }
+
+    function isValidService(data) {
+      return data.keys().hasAll(['title', 'description', 'isConfirmed']) &&
+        data.title is string && data.title.size() <= 100 &&
+        data.description is string && data.description.size() <= 1000 &&
+        data.isConfirmed is bool;
+    }
+
+    function isValidProject(data) {
+      return data.keys().hasAll(['title', 'category', 'isPublished']) &&
+        data.title is string && data.title.size() <= 150 &&
+        data.category in ['Wall Murals', 'Interior Art', 'Decorative Painting', 'Creative Concepts', 'Wall Art', 'Murals', 'Interior Decoration', 'Custom Artwork'] &&
+        data.isPublished is bool;
+    }
+
+    function isValidInquiry(data) {
+      return data.keys().hasAll(['fullName', 'phoneNumber', 'serviceRequired', 'projectDescription']) &&
+        data.fullName is string && data.fullName.size() >= 2 && data.fullName.size() <= 100 &&
+        data.phoneNumber is string && data.phoneNumber.size() >= 5 && data.phoneNumber.size() <= 30 &&
+        data.serviceRequired is string && data.serviceRequired.size() <= 100 &&
+        data.projectDescription is string && data.projectDescription.size() <= 2000;
+    }
+
+    // Business Settings (Public read, admin write)
+    match /settings/{settingId} {
+      allow get: if isValidId(settingId);
+      allow list: if true;
+      allow create, update: if isValidId(settingId) && isAdmin() && isValidBusinessSettings(incoming());
+      allow delete: if isValidId(settingId) && isAdmin();
+    }
+
+    // Services (Public read, admin write)
+    match /services/{serviceId} {
+      allow get: if isValidId(serviceId);
+      allow list: if true;
+      allow create, update: if isValidId(serviceId) && isAdmin() && isValidService(incoming());
+      allow delete: if isValidId(serviceId) && isAdmin();
+    }
+
+    // Portfolio Projects (Public read for published, admin full access)
+    match /projects/{projectId} {
+      allow get: if isValidId(projectId) && (resource.data.isPublished == true || isAdmin());
+      allow list: if resource.data.isPublished == true || isAdmin();
+      allow create, update: if isValidId(projectId) && isAdmin() && isValidProject(incoming());
+      allow delete: if isValidId(projectId) && isAdmin();
+    }
+
+    // Inquiries (Public lead creation, admin only read/manage)
+    match /inquiries/{inquiryId} {
+      allow create: if isValidId(inquiryId) && isValidInquiry(incoming());
+      allow get: if isValidId(inquiryId) && isAdmin();
+      allow list: if isAdmin();
+      allow update, delete: if isValidId(inquiryId) && isAdmin();
+    }
+
+    // Admin Users roster (Admin only)
+    match /admins/{adminId} {
+      allow read, write: if isValidId(adminId) && isAdmin();
+    }
+  }
+}
