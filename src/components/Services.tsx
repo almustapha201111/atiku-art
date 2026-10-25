@@ -37,7 +37,7 @@ export const Services: React.FC = () => {
         {/* Services Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {confirmedServices.map((service, index) => {
-            const quoteMessage = `Hello ATIKU ART, I saw your website and I would like to request a quote for your "${service.title}" service.`;
+            const quoteMessage = `Hello ATIKU MAKODA ARTS, I saw your website and I would like to request a quote for your "${service.title}" service.`;
 
             return (
               <motion.div
@@ -61,7 +61,7 @@ export const Services: React.FC = () => {
                       <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#FAF7F2] via-white to-[#F4A6A0]/10">
                         <Palette className="w-8 h-8 text-[#E76F51] mb-2" />
                         <span className="text-xs uppercase tracking-wider text-[#E76F51] font-semibold">
-                          ATIKU ART Studio
+                          ATIKU MAKODA ARTS Studio
                         </span>
                         <span className="text-xs text-[#777] mt-1 font-serif">
                           {service.title}
@@ -122,7 +122,7 @@ export const Services: React.FC = () => {
             </p>
           </div>
           <a
-            href={getWhatsAppUrl("Hello ATIKU ART, I have a custom wall art idea and would like to discuss it directly.")}
+            href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I have a custom wall art idea and would like to discuss it directly.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-sm bg-[#E76F51] hover:bg-[#C85438] text-white font-bold uppercase tracking-wider text-xs transition-all shadow-md shadow-[#E76F51]/30 whitespace-nowrap active:scale-95"

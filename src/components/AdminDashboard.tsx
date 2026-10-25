@@ -61,7 +61,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onClose }) => {
 
   // Settings State
   const [settingsForm, setSettingsForm] = useState({
-    businessName: settings.businessName || 'ATIKU ART',
+    businessName: settings.businessName || 'ATIKU MAKODA ARTS',
     tagline: settings.tagline || '',
     whatsappNumber: settings.whatsappNumber || '',
     phoneNumber: settings.phoneNumber || '',

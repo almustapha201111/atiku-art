@@ -54,7 +54,7 @@ function StudioApp() {
         className="fixed bottom-6 right-6 z-30 hidden sm:block"
       >
         <a
-          href={getWhatsAppUrl("Hello ATIKU ART, I saw your website and I'm interested in your wall art services. I would like to discuss a project.")}
+          href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I saw your website and I'm interested in your wall art services. I would like to discuss a project.")}
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center space-x-2.5 px-5 py-3.5 rounded-full bg-[#E76F51] hover:bg-[#C85438] text-white font-bold shadow-lg shadow-[#E76F51]/35 hover:shadow-xl hover:shadow-[#E76F51]/50 active:scale-95 transition-all"
@@ -81,7 +81,7 @@ function StudioApp() {
         </a>
 
         <a
-          href={getWhatsAppUrl("Hello ATIKU ART, I saw your website and I would like to discuss a wall art project.")}
+          href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I saw your website and I would like to discuss a wall art project.")}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 inline-flex items-center justify-center space-x-1.5 py-2.5 rounded-lg bg-[#E76F51] text-white text-xs font-bold uppercase tracking-wider shadow-sm active:scale-95 transition-all"

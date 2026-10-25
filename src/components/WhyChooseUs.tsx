@@ -53,11 +53,11 @@ export const WhyChooseUs: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.25em] text-[#E76F51] font-bold mb-3">
-            <span>The ATIKU ART Standard</span>
+            <span>The ATIKU MAKODA ARTS Standard</span>
             <span className="w-8 h-[1.5px] bg-[#E76F51]" />
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-black text-[#252525] uppercase tracking-tight">
-            Why Choose <span className="artistic-gradient-text italic font-bold">ATIKU ART?</span>
+            Why Choose <span className="artistic-gradient-text italic font-bold">ATIKU MAKODA ARTS?</span>
           </h2>
           <p className="mt-5 text-sm sm:text-base text-[#555555] font-normal leading-relaxed">
             Elevating wall decoration beyond routine paint into refined, enduring statements of culture, luxury, and artistic mastery.
@@ -125,12 +125,12 @@ export const WhyChooseUs: React.FC = () => {
                 Art That Resonates With Warmth & Distinction.
               </h3>
               <p className="mt-3 text-xs sm:text-sm text-white/90 leading-relaxed font-light">
-                We believe that every stroke tells a story. From modern geometric abstractions to expressive botanical murals, ATIKU ART brings vibrant soul to contemporary interior architecture.
+                We believe that every stroke tells a story. From modern geometric abstractions to expressive botanical murals, ATIKU MAKODA ARTS brings vibrant soul to contemporary interior architecture.
               </p>
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/20 flex items-center justify-between">
-              <span className="font-serif text-xs font-bold tracking-widest uppercase">ATIKU ART Studio</span>
+              <span className="font-serif text-xs font-bold tracking-widest uppercase">ATIKU MAKODA ARTS Studio</span>
               <span className="text-[10px] text-[#E9C46A] font-mono tracking-widest font-semibold">NIGERIA</span>
             </div>
           </motion.div>

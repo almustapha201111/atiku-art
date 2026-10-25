@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
   };
 
   const buildWhatsAppInquiryUrl = () => {
-    const text = `Hello ATIKU ART,\n\nMy Name: ${formData.fullName || 'Prospective Client'}\nPhone: ${formData.phoneNumber || 'N/A'}\nService Required: ${formData.serviceRequired}\nProject Details: ${formData.projectDescription || 'I would like to discuss a wall art project.'}`;
+    const text = `Hello ATIKU MAKODA ARTS,\n\nMy Name: ${formData.fullName || 'Prospective Client'}\nPhone: ${formData.phoneNumber || 'N/A'}\nService Required: ${formData.serviceRequired}\nProject Details: ${formData.projectDescription || 'I would like to discuss a wall art project.'}`;
     return getWhatsAppUrl(text);
   };
 
@@ -74,7 +74,7 @@ export const Contact: React.FC = () => {
             <span className="w-8 h-[1.5px] bg-[#E76F51]" />
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-black text-[#252525] uppercase tracking-tight">
-            Connect With <span className="artistic-gradient-text italic font-bold">ATIKU ART.</span>
+            Connect With <span className="artistic-gradient-text italic font-bold">ATIKU MAKODA ARTS.</span>
           </h2>
           <p className="mt-5 text-sm sm:text-base text-[#555555] font-normal leading-relaxed">
             Ready to commission a vibrant wall masterpiece? Send us your space details or chat directly with our team on WhatsApp.
@@ -93,7 +93,7 @@ export const Contact: React.FC = () => {
                   Creative Studio
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-[#252525] mt-1">
-                  {settings.businessName || 'ATIKU ART'}
+                  {settings.businessName || 'ATIKU MAKODA ARTS'}
                 </h3>
                 <p className="mt-3 text-xs sm:text-sm text-[#555555] leading-relaxed">
                   {settings.tagline || 'Creative Wall Art & Interior Design Studio'}
@@ -102,7 +102,7 @@ export const Contact: React.FC = () => {
                 {/* Direct WhatsApp Callout */}
                 <div className="mt-6 pt-6 border-t border-[#EADBCE]">
                   <a
-                    href={getWhatsAppUrl("Hello ATIKU ART, I saw your website and I'm interested in your wall art services. I would like to discuss a project.")}
+                    href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I saw your website and I'm interested in your wall art services. I would like to discuss a project.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center space-x-2.5 py-4 rounded-sm bg-[#E76F51] hover:bg-[#C85438] text-white font-bold uppercase tracking-wider text-xs shadow-md shadow-[#E76F51]/30 hover:shadow-lg active:scale-95 transition-all"
@@ -211,7 +211,7 @@ export const Contact: React.FC = () => {
                     Inquiry Received!
                   </h4>
                   <p className="text-xs sm:text-sm text-[#555555] max-w-md mx-auto leading-relaxed">
-                    Thank you, {formData.fullName}. Your project inquiry has been securely submitted to ATIKU ART.
+                    Thank you, {formData.fullName}. Your project inquiry has been securely submitted to ATIKU MAKODA ARTS.
                   </p>
                   
                   {/* Actions: Forward to WhatsApp */}

@@ -19,14 +19,14 @@ export {
 };
 
 export const DEFAULT_BUSINESS_SETTINGS: BusinessSettings = {
-  businessName: 'ATIKU ART',
+  businessName: 'ATIKU MAKODA ARTS',
   tagline: 'Creative Wall Art & Interior Design Studio',
   whatsappNumber: '+2348000000000',
   phoneNumber: '+234 800 000 0000',
   instagram: '@atiku_art',
   tiktok: '@atiku_art',
   location: 'Nigeria',
-  aboutText: 'ATIKU ART is a dedicated creative art studio specializing in wall painting, artistic interior wall decoration, custom murals, and bespoke wall finishes across Nigeria. We transform blank walls into expressive, colorful, and elegant focal points. Through creative craftsmanship, fine attention to detail, and personalized artistic consultations, we bring warmth, luxury, and cultural depth to homes, luxury villas, and boutique commercial spaces.',
+  aboutText: 'ATIKU MAKODA ARTS is a dedicated creative art studio specializing in wall painting, artistic interior wall decoration, custom murals, and bespoke wall finishes across Nigeria. We transform blank walls into expressive, colorful, and elegant focal points. Through creative craftsmanship, fine attention to detail, and personalized artistic consultations, we bring warmth, luxury, and cultural depth to homes, luxury villas, and boutique commercial spaces.',
   heroTitle: 'WE TURN WALLS INTO MASTERPIECES.',
   heroSubtitle: 'Transforming ordinary spaces into extraordinary works of art through vibrant creativity, precision, and professional craftsmanship.',
   heroImageUrl: heroImg
@@ -174,7 +174,7 @@ export const INITIAL_REAL_PROJECT_SLOTS: Omit<ProjectItem, 'id'>[] = [
   {
     title: 'Client Commission #1',
     category: 'Wall Murals',
-    description: 'Verified ATIKU ART client project photograph slot. Upload authentic project photos from the Admin Dashboard.',
+    description: 'Verified ATIKU MAKODA ARTS client project photograph slot. Upload authentic project photos from the Admin Dashboard.',
     imageUrl: '',
     isPublished: true,
     isConcept: false,
@@ -184,7 +184,7 @@ export const INITIAL_REAL_PROJECT_SLOTS: Omit<ProjectItem, 'id'>[] = [
   {
     title: 'Client Commission #2',
     category: 'Interior Art',
-    description: 'Verified ATIKU ART client project photograph slot. Upload authentic project photos from the Admin Dashboard.',
+    description: 'Verified ATIKU MAKODA ARTS client project photograph slot. Upload authentic project photos from the Admin Dashboard.',
     imageUrl: '',
     isPublished: true,
     isConcept: false,

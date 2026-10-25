@@ -61,7 +61,7 @@ export const About: React.FC = () => {
             </h2>
             <p className="mt-6 text-base sm:text-lg text-[#555555] font-normal leading-relaxed">
               {settings.aboutText ||
-                'ATIKU ART is a dedicated creative art studio specializing in wall painting, artistic interior wall decoration, custom murals, and bespoke wall finishes across Nigeria. We believe that walls are not merely partitions, but living canvases that shape how people feel, live, and create.'}
+                'ATIKU MAKODA ARTS is a dedicated creative art studio specializing in wall painting, artistic interior wall decoration, custom murals, and bespoke wall finishes across Nigeria. We believe that walls are not merely partitions, but living canvases that shape how people feel, live, and create.'}
             </p>
           </div>
 
@@ -129,12 +129,12 @@ export const About: React.FC = () => {
                 Every space is treated as an original gallery piece.
               </h4>
               <p className="mt-3 text-xs text-white/90 leading-relaxed font-light">
-                Whether creating a bold focal accent wall for a private residence or an expansive mural for a boutique hospitality suite, ATIKU ART combines technical excellence with boundless creative ambition.
+                Whether creating a bold focal accent wall for a private residence or an expansive mural for a boutique hospitality suite, ATIKU MAKODA ARTS combines technical excellence with boundless creative ambition.
               </p>
             </div>
 
             <div className="pt-6 mt-6 border-t border-white/20 flex items-center justify-between">
-              <span className="text-[11px] tracking-wider uppercase font-serif font-bold">ATIKU ART Studio</span>
+              <span className="text-[11px] tracking-wider uppercase font-serif font-bold">ATIKU MAKODA ARTS Studio</span>
               <span className="text-[11px] text-[#E9C46A] font-mono tracking-widest font-semibold">EST. NIGERIA</span>
             </div>
           </motion.div>

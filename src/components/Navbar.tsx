@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, isAdminOpen }) => {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-lg sm:text-xl font-bold tracking-[0.18em] text-[#252525] group-hover:text-[#E76F51] transition-colors">
-                  {settings.businessName || 'ATIKU ART'}
+                  {settings.businessName || 'ATIKU MAKODA ARTS'}
                 </span>
                 <span className="text-[9px] tracking-[0.25em] uppercase text-[#2A9D8F] font-semibold -mt-0.5">
                   Creative Wall Art Studio

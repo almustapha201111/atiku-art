@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
                 </div>
               </div>
               <span className="font-serif text-2xl font-bold tracking-[0.18em] text-[#252525]">
-                {settings.businessName || 'ATIKU ART'}
+                {settings.businessName || 'ATIKU MAKODA ARTS'}
               </span>
             </div>
 
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             </p>
 
             <a
-              href={getWhatsAppUrl("Hello ATIKU ART, I would like to book a project consultation.")}
+              href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I would like to book a project consultation.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 px-5 py-3 rounded-sm bg-[#E76F51] hover:bg-[#C85438] text-white font-bold uppercase tracking-wider text-xs shadow-md shadow-[#E76F51]/30 hover:shadow-lg transition-all"
@@ -141,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#777]">
           <div className="flex items-center space-x-3">
-            <span>© {new Date().getFullYear()} ATIKU ART. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} ATIKU MAKODA ARTS. All rights reserved.</span>
             <span>•</span>
             <button
               onClick={onOpenAdmin}

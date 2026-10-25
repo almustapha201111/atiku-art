@@ -118,7 +118,7 @@ export const Process: React.FC = () => {
         {/* Action Button */}
         <div className="mt-16 text-center">
           <a
-            href={getWhatsAppUrl("Hello ATIKU ART, I would like to begin Step 1 (Consultation) for my wall space.")}
+            href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I would like to begin Step 1 (Consultation) for my wall space.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-3 px-8 py-4 rounded-sm bg-[#E76F51] hover:bg-[#C85438] text-white font-bold uppercase tracking-[0.16em] text-xs transition-all shadow-md shadow-[#E76F51]/30 hover:shadow-lg hover:shadow-[#E76F51]/40 active:scale-95"

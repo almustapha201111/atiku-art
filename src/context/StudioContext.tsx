@@ -104,9 +104,13 @@ export const StudioProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       (snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.data() as BusinessSettings;
+          const businessName = (!data.businessName || data.businessName === 'ATIKU ART' || data.businessName === 'ATIKU MAKODA ART')
+            ? 'ATIKU MAKODA ARTS'
+            : data.businessName;
           setSettings({
             ...DEFAULT_BUSINESS_SETTINGS,
-            ...data
+            ...data,
+            businessName
           });
         } else {
           setSettings(DEFAULT_BUSINESS_SETTINGS);
@@ -212,7 +216,7 @@ export const StudioProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   // WhatsApp Link Generator
   const getWhatsAppUrl = (customMessage?: string): string => {
     const cleanNumber = (settings.whatsappNumber || '+2348000000000').replace(/[^0-9]/g, '');
-    const defaultMsg = "Hello ATIKU ART, I saw your website and I'm interested in your wall art services. I would like to discuss a project.";
+    const defaultMsg = "Hello ATIKU MAKODA ARTS, I saw your website and I'm interested in your wall art services. I would like to discuss a project.";
     const text = encodeURIComponent(customMessage || defaultMsg);
     return `https://wa.me/${cleanNumber}?text=${text}`;
   };

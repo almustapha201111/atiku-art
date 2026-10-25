@@ -151,7 +151,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onOpenAdminUpload }) => {
                       </button>
 
                       <a
-                        href={getWhatsAppUrl(`Hello ATIKU ART, I am inspired by the "${project.title}" style from your website. Can we discuss a custom project like this?`)}
+                        href={getWhatsAppUrl(`Hello ATIKU MAKODA ARTS, I am inspired by the "${project.title}" style from your website. Can we discuss a custom project like this?`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs text-[#E76F51] font-bold hover:text-[#C85438] flex items-center space-x-1 transition-colors"
@@ -266,7 +266,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onOpenAdminUpload }) => {
                           Authentic Handiwork
                         </span>
                         <a
-                          href={getWhatsAppUrl(`Hello ATIKU ART, I am looking at your real project "${project.title}" and would like to discuss a similar project.`)}
+                          href={getWhatsAppUrl(`Hello ATIKU MAKODA ARTS, I am looking at your real project "${project.title}" and would like to discuss a similar project.`)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-xs text-[#E76F51] font-bold hover:underline"
@@ -289,7 +289,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onOpenAdminUpload }) => {
                 Authentic Client Work Archive
               </h3>
               <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
-                ATIKU ART upholds complete authenticity. When real on-site client photographs are uploaded via the Admin Dashboard, they appear in this dedicated section.
+                ATIKU MAKODA ARTS upholds complete authenticity. When real on-site client photographs are uploaded via the Admin Dashboard, they appear in this dedicated section.
               </p>
               <div className="pt-2">
                 <button

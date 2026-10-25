@@ -149,12 +149,12 @@ export const LightboxModal: React.FC = () => {
 
               <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
                 {activeLightboxProject.description ||
-                  'Custom hand-painted artistic wall project designed by the ATIKU ART creative studio.'}
+                  'Custom hand-painted artistic wall project designed by the ATIKU MAKODA ARTS creative studio.'}
               </p>
 
               <div className="pt-4 border-t border-[#EADBCE] space-y-2 text-xs text-[#777]">
                 <div>
-                  <span className="text-[#252525] font-bold">Studio:</span> ATIKU ART — Creative Wall Art & Interior Design
+                  <span className="text-[#252525] font-bold">Studio:</span> ATIKU MAKODA ARTS — Creative Wall Art & Interior Design
                 </div>
                 <div>
                   <span className="text-[#252525] font-bold">Execution:</span> 100% Hand-Crafted with durable architectural pigments
@@ -165,7 +165,7 @@ export const LightboxModal: React.FC = () => {
             {/* Inquire on WhatsApp for similar artwork */}
             <div className="pt-6 mt-6 border-t border-[#EADBCE]">
               <a
-                href={getWhatsAppUrl(`Hello ATIKU ART, I am admiring your "${activeLightboxProject.title}" (${activeLightboxProject.category}) work on your website. I would love to discuss commissioning a project in this style.`)}
+                href={getWhatsAppUrl(`Hello ATIKU MAKODA ARTS, I am admiring your "${activeLightboxProject.title}" (${activeLightboxProject.category}) work on your website. I would love to discuss commissioning a project in this style.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center space-x-2.5 py-4 rounded-sm bg-[#E76F51] hover:bg-[#C85438] text-white font-bold uppercase tracking-wider text-xs shadow-md shadow-[#E76F51]/30 hover:shadow-lg active:scale-95 transition-all"

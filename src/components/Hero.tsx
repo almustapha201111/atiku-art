@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href={getWhatsAppUrl("Hello ATIKU ART, I saw your website and I'd like to get a free quote for my wall art project.")}
+                href={getWhatsAppUrl("Hello ATIKU MAKODA ARTS, I saw your website and I'd like to get a free quote for my wall art project.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-8 py-4 rounded-sm text-xs uppercase tracking-[0.16em] font-bold bg-[#E76F51] hover:bg-[#C85438] text-white transition-all duration-300 shadow-md shadow-[#E76F51]/30 hover:shadow-lg hover:shadow-[#E76F51]/40 active:scale-95"
@@ -133,7 +133,7 @@ export const Hero: React.FC = () => {
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-100">
                 <img
                   src={activeHeroImage}
-                  alt="Colorful modern luxury wall mural by ATIKU ART"
+                  alt="Colorful modern luxury wall mural by ATIKU MAKODA ARTS"
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 />
 
